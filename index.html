@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Materiales – Sistema de Cronometraje Natación</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a1628;
+      color: #e0e6f0;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00c8ff;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #7a9abf;
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+    }
+    .section-title {
+      font-size: 1.1rem;
+      color: #00c8ff;
+      border-left: 4px solid #00c8ff;
+      padding-left: 12px;
+      margin: 30px 0 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+      background: #0f2040;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    thead tr {
+      background: #00c8ff22;
+    }
+    th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.85rem;
+      color: #00c8ff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 11px 16px;
+      font-size: 0.92rem;
+      border-top: 1px solid #1a3050;
+      vertical-align: top;
+    }
+    tr:hover td { background: #112240; }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .badge-core    { background: #00c8ff22; color: #00c8ff; }
+    .badge-sensor  { background: #00ff9922; color: #00ff99; }
+    .badge-audio   { background: #ff990022; color: #ff9900; }
+    .badge-display { background: #cc44ff22; color: #cc44ff; }
+    .badge-power   { background: #ff444422; color: #ff6666; }
+    .badge-misc    { background: #ffffff11; color: #aaaaaa; }
+    .price { font-weight: 700; color: #00ff99; white-space: nowrap; }
+    .total-row td {
+      background: #00c8ff15;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #00c8ff;
+      border-top: 2px solid #00c8ff44;
+    }
+    .note {
+      font-size: 0.8rem;
+      color: #5a7a9a;
+      margin-top: 4px;
+    }
+    .summary-box {
+      background: #0f2040;
+      border: 1px solid #00c8ff33;
+      border-radius: 10px;
+      padding: 20px 28px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .summary-item { text-align: center; }
+    .summary-item .val { font-size: 1.6rem; font-weight: 700; color: #00c8ff; }
+    .summary-item .lbl { font-size: 0.8rem; color: #5a7a9a; margin-top: 2px; }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #2a4060;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⚡ Sistema de Cronometraje para Natación</h1>
+  <p class="subtitle">Lista completa de materiales · ESP32 · Sensores de presión · Pantalla · Audio</p>
+
+  <!-- MICROCONTROLADOR -->
+  <p class="section-title">🔧 Microcontrolador Principal</p>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Componente</th><th>Modelo / Especificación</th><th>Cant.</th><th>Precio Unit. (USD)</th><th>Subtotal</th><th>Tipo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><strong>Microcontrolador ESP32</strong><br><span class="note">WiFi + Bluetooth integrado, 240 MHz dual-core, 38 pines</span></td>
+        <td>ESP32-WROOM-32 DevKit v1</td>
+        <td>1</td>
+        <td class="price">$8.00</td>
+        <td class="price">$8.00</td>
+        <td><span class="badge badge-core">Core</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SENSORES DE PRESIÓN -->
+  <p class="section-title">🌊 Sensores de Presión (Paredes de Piscina)</p>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Componente</th><th>Modelo / Especificación</th><th>Cant.</th><th>Precio Unit. (USD)</th><th>Subtotal</th><th>Tipo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2</td>
+        <td><strong>Sensor de Presión Piezoeléctrico Subacuático</strong><br><span class="note">Para detectar toque en pared de piscina. IP68, rango 0–10 PSI</span></td>
+        <td>FSR-400 / Piezo Film Sensor (waterproof)</td>
+        <td>2</td>
+        <td class="price">$12.00</td>
+        <td class="price">$24.00</td>
+        <td><span class="badge badge-sensor">Sensor</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>Módulo acondicionador de señal para sensor de presión</strong><br><span class="note">Amplifica y acondiciona la señal analógica del sensor piezoeléctrico</span></td>
+        <td>HX711 / INA128 Signal Conditioner</td>
+        <td>2</td>
+        <td class="price">$5.00</td>
+        <td class="price">$10.00</td>
+        <td><span class="badge badge-sensor">Sensor</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SENSOR PLATAFORMA DE SALIDA -->
+  <p class="section-title">🏊 Sensor de Plataforma de Salida (Anti-Salida Falsa)</p>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Componente</th><th>Modelo / Especificación</th><th>Cant.</th><th>Precio Unit. (USD)</th><th>Subtotal</th><th>Tipo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4</td>
+        <td><strong>Placa de presión / Sensor de fuerza FSR</strong><br><span class="note">Detecta si el nadador está parado en el bloque de salida. Activo mientras haya peso.</span></td>
+        <td>FSR 406 (Large Area Force Sensor)</td>
+        <td>1</td>
+        <td class="price">$9.00</td>
+        <td class="price">$9.00</td>
+        <td><span class="badge badge-sensor">Sensor</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>Módulo divisor de voltaje / resistencia pull-down</strong><br><span class="note">Para leer correctamente el FSR con el ESP32 (10kΩ)</span></td>
+        <td>Resistor 10kΩ + PCB pequeña</td>
+        <td>1</td>
+        <td class="price">$0.50</td>
+        <td class="price">$0.50</td>
+        <td><span class="badge badge-misc">Misc</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PANTALLA -->
+  <p class="section-title">🖥️ Pantalla de Visualización en Piscina</p>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Componente</th><th>Modelo / Especificación</th><th>Cant.</th><th>Precio Unit. (USD)</th><th>Subtotal</th><th>Tipo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6</td>
+        <td><strong>Pantalla LCD TFT a color</strong><br><span class="note">Muestra tiempo en vivo, récord, alertas y estado de carrera. 3.5" visible a distancia.</span></td>
+        <td>ILI9488 3.5" TFT SPI 480x320</td>
+        <td>1</td>
+        <td class="price">$14.00</td>
+        <td class="price">$14.00</td>
+        <td><span class="badge badge-display">Display</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- AUDIO -->
+  <p class="section-title">🔊 Sistema de Audio (Bocinas y Señales Sonoras)</p>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Componente</th><th>Modelo / Especificación</th><th>Cant.</th><th>Precio Unit. (USD)</th><th>Subtotal</th><th>Tipo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>7</td>
+        <td><strong>Módulo amplificador de audio</strong><br><span class="note">Amplifica la señal PWM del ESP32 para las bocinas</span></td>
+        <td>PAM8403 Mini Amplifier 3W</td>
+        <td>1</td>
+        <td class="price">$3.00</td>
+        <td class="price">$3.00</td>
+        <td><span class="badge badge-audio">Audio</span></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><strong>Bocina / Altavoz</strong><br><span class="note">Para emitir señales de cuenta regresiva, mitad de carrera y llegada a meta</span></td>
+        <td>Altavoz 8Ω 3W (57mm)</td>
+        <td>2</td>
+        <td class="price">$2.50</td>
+        <td class="price">$5.00</td>
+        <td><span class="badge badge-audio">Audio</span></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><strong>Buzzer activo (respaldo)</strong><br><span class="note">Señal de alerta de salida falsa y confirmación de toque</span></td>
+        <td>Buzzer activo 5V</td>
+        <td>1</td>
+        <td class="price">$1.00</td>
+        <td class="price">$1.00</td>
+        <td><span class="badge badge-audio">Audio</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ALIMENTACIÓN -->
+  <p class="section-title">⚡ Alimentación y Cableado</p>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Componente</th><th>Modelo / Especificación</th><th>Cant.</th><th>Precio Unit. (USD)</th><th>Subtotal</th><th>Tipo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td><strong>Fuente de alimentación 5V 3A</strong><br><span class="note">Alimenta el ESP32, pantalla y módulos de audio</span></td>
+        <td>Adaptador 5V 3A DC Jack</td>
+        <td>1</td>
+        <td class="price">$6.00</td>
+        <td class="price">$6.00</td>
+        <td><span class="badge badge-power">Energía</span></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td><strong>Protoboard / PCB de prototipado</strong><br><span class="note">Para conexiones y pruebas del circuito</span></td>
+        <td>Protoboard 830 puntos</td>
+        <td>1</td>
+        <td class="price">$3.50</td>
+        <td class="price">$3.50</td>
+        <td><span class="badge badge-misc">Misc</span></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><strong>Cables Dupont (M-M, M-H, H-H)</strong><br><span class="note">Conexiones entre módulos y ESP32</span></td>
+        <td>Pack 120 cables 20cm</td>
+        <td>1</td>
+        <td class="price">$3.00</td>
+        <td class="price">$3.00</td>
+        <td><span class="badge badge-misc">Misc</span></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><strong>Cable impermeable para sensores</strong><br><span class="note">Para llevar señal desde sensores en pared de piscina hasta el ESP32</span></td>
+        <td>Cable apantallado 2 hilos (5 metros)</td>
+        <td>2</td>
+        <td class="price">$4.00</td>
+        <td class="price">$8.00</td>
+        <td><span class="badge badge-misc">Misc</span></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td><strong>Caja estanca / carcasa IP65</strong><br><span class="note">Protege el ESP32 y módulos del ambiente húmedo de la piscina</span></td>
+        <td>Caja plástica IP65 15x10x5cm</td>
+        <td>1</td>
+        <td class="price">$7.00</td>
+        <td class="price">$7.00</td>
+        <td><span class="badge badge-misc">Misc</span></td>
+      </tr>
+      <!-- TOTAL -->
+      <tr class="total-row">
+        <td colspan="5" style="text-align:right; padding-right: 24px;">💰 TOTAL ESTIMADO</td>
+        <td class="price" style="font-size:1.1rem;">$102.00</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- RESUMEN -->
+  <div class="summary-box">
+    <div class="summary-item">
+      <div class="val">14</div>
+      <div class="lbl">Componentes distintos</div>
+    </div>
+    <div class="summary-item">
+      <div class="val">~$102</div>
+      <div class="lbl">Costo total estimado (USD)</div>
+    </div>
+    <div class="summary-item">
+      <div class="val">ESP32</div>
+      <div class="lbl">Microcontrolador principal</div>
+    </div>
+    <div class="summary-item">
+      <div class="val">IP65/68</div>
+      <div class="lbl">Protección contra agua</div>
+    </div>
+    <div class="summary-item">
+      <div class="val">3</div>
+      <div class="lbl">Sensores de presión</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>* Precios estimados en USD. Pueden variar según proveedor (MercadoLibre, AliExpress, Amazon).</p>
+    <p>Sistema de Cronometraje para Natación · Proyecto Escolar</p>
+  </footer>
+
+</body>
+</html>
